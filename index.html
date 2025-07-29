@@ -17,6 +17,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        animation: slideDown 1s ease-in-out;
       }
       .nav-links {
         display: flex;
@@ -26,6 +27,10 @@
         color: white;
         text-decoration: none;
         font-weight: bold;
+        transition: transform 0.3s ease;
+      }
+      .nav-links a:hover {
+        transform: scale(1.1);
       }
       .contact-info {
         font-size: 14px;
@@ -34,6 +39,7 @@
         background-color: white;
         text-align: center;
         padding: 60px 20px 30px;
+        animation: fadeIn 1.5s ease-in;
       }
       .hero p.subtext {
         font-size: 16px;
@@ -43,6 +49,7 @@
       .buttons {
         text-align: center;
         margin: 30px 0;
+        animation: fadeInUp 1.2s ease-in;
       }
       .buttons a {
         background-color: #00796b;
@@ -51,18 +58,59 @@
         margin: 0 10px;
         text-decoration: none;
         border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .buttons a:hover {
+        background-color: #004d40;
       }
       .footer-button {
         text-align: center;
         margin: 50px 0 20px;
+        animation: fadeIn 1.5s ease-in;
       }
       .footer-button a {
         background-color: #00796b;
         color: white;
-        padding: 10px 20px;
+        padding: 8px 16px;
         text-decoration: none;
         border-radius: 5px;
         font-size: 14px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      .footer-button a:hover {
+        background-color: #004d40;
+        transform: scale(1.05);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
