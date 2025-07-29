@@ -5,26 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Shivraj CV & Typing Service</title>
 <style>
-  /* Basic reset and fonts */
   body {
     margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
     background-size: cover; color: #222;
     min-height: 100vh; display: flex; flex-direction: column;
   }
-  /* Navbar styling */
   nav {
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(0, 77, 64, 0.95); padding: 12px 24px; color: #fff;
-    position: sticky; top: 0; z-index: 9999;
+    display: flex; justify-content: center; position: sticky; top: 0;
+    background: rgba(0, 77, 64, 0.95); padding: 12px 0; color: #fff;
+    z-index: 9999;
   }
-  /* Left side is empty to remove middle contact */
-  .nav-left {
-    width: 30%;
-  }
-  /* Center nav buttons */
   .nav-center {
-    display: flex; gap: 20px; justify-content: center; width: 40%;
+    display: flex; gap: 20px;
   }
   .nav-center button {
     background: transparent; border: 2px solid #b2dfdb;
@@ -35,9 +28,9 @@
   .nav-center button.active {
     background-color: #b2dfdb; color: #004d40; border-color: #b2dfdb;
   }
-  /* Right side contact */
   .nav-right {
-    display: flex; gap: 20px; align-items: center; width: 30%; justify-content: flex-end;
+    position: fixed; right: 20px; top: 14px;
+    display: flex; gap: 15px; align-items: center;
   }
   .nav-right a {
     color: #b2dfdb; text-decoration: none; display: flex;
@@ -50,9 +43,8 @@
   .nav-right img {
     width: 20px; height: 20px;
   }
-  /* Sections styling */
   section {
-    max-width: 900px; margin: 30px auto 80px auto;
+    max-width: 900px; margin: 80px auto 80px auto;
     background: rgba(255,255,255,0.9); padding: 30px 25px;
     border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     display: none; animation: fadeIn 0.7s ease forwards;
@@ -61,7 +53,7 @@
     display: block;
   }
   #home {
-    display: block; /* Show home initially */
+    display: block;
     text-align: center;
   }
   #home h1 {
@@ -88,12 +80,6 @@
   .card p {
     font-size: 0.9rem; color: #444;
   }
-  /* Footer Contact (Optional, can remove if redundant) */
-  footer.footer-contact {
-    background: rgba(0, 77, 64, 0.95); color: white;
-    padding: 14px 20px; font-size: 14px; text-align: center;
-  }
-  /* Message Now button at bottom */
   .message-now-btn {
     width: 160px; background-color: #25d366; color: white;
     font-weight: 700; font-size: 16px; padding: 12px 0; border: none;
@@ -110,16 +96,15 @@
     from {opacity: 0; transform: translateY(20px);}
     to {opacity: 1; transform: translateY(0);}
   }
-  /* Responsive */
   @media(max-width: 720px) {
     nav {
       flex-wrap: wrap; padding: 12px 12px;
+      justify-content: center;
+      position: static;
     }
-    .nav-left, .nav-right {
-      width: 100%; justify-content: center; margin: 6px 0;
-    }
-    .nav-center {
-      width: 100%; justify-content: center; gap: 12px; margin: 10px 0;
+    .nav-right {
+      position: static; margin-top: 10px; justify-content: center;
+      width: 100%; gap: 25px;
     }
     section {
       margin: 20px 15px 100px 15px; padding: 20px 15px;
@@ -131,6 +116,7 @@
     .message-now-btn {
       width: 90%; left: 5%; right: 5%;
       bottom: 10px;
+      position: fixed;
     }
   }
 </style>
@@ -138,24 +124,24 @@
 <body>
 
 <nav>
-  <div class="nav-left"></div> <!-- empty to remove middle contact -->
   <div class="nav-center">
     <button class="active" onclick="showSection('home', this)">Home</button>
     <button onclick="showSection('services', this)">Our Services</button>
     <button onclick="showSection('whychoose', this)">Why Choose Me</button>
   </div>
-  <div class="nav-right">
-    <a href="https://wa.me/9779765808346" target="_blank" rel="noopener noreferrer">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" /> 9765808346
-    </a>
-    <a href="https://www.facebook.com/shivrajcvtypingservice" target="_blank" rel="noopener noreferrer">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" /> Shivraj CV & Typing Service
-    </a>
-    <a href="https://www.fiverr.com/shivrajsingh206" target="_blank" rel="noopener noreferrer">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/fiverr.png" alt="Fiverr" style="width:20px; height:20px;" /> shivrajsingh206
-    </a>
-  </div>
 </nav>
+
+<div class="nav-right">
+  <a href="https://wa.me/9779765808346" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" /> 9765808346
+  </a>
+  <a href="https://www.facebook.com/shivrajcvtypingservice" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" /> Shivraj CV & Typing Service
+  </a>
+  <a href="https://www.fiverr.com/shivrajsingh206" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/fiverr.png" alt="Fiverr" style="width:20px; height:20px;" /> shivrajsingh206
+  </a>
+</div>
 
 <section id="home" class="active">
   <h1>Welcome to My Freelancing Services</h1>
@@ -213,13 +199,6 @@
   </div>
 </section>
 
-<!-- Optional Footer -->
-<!--
-<footer class="footer-contact">
-  Contact Me: WhatsApp 9765808346 | Facebook Shivraj CV & Typing Service | Fiverr shivrajsingh206
-</footer>
--->
-
 <a href="https://wa.me/9779765808346" target="_blank" class="message-now-btn" rel="noopener noreferrer">
   Message Now
 </a>
@@ -230,12 +209,13 @@
     sections.forEach(sectionId => {
       document.getElementById(sectionId).style.display = 'none';
     });
-
     document.getElementById(id).style.display = 'block';
 
-    // Update active button style
+    // Remove active class from all buttons
     const navButtons = document.querySelectorAll('.nav-center button');
     navButtons.forEach(button => button.classList.remove('active'));
+
+    // Add active class to clicked button
     if(btn) btn.classList.add('active');
   }
 </script>
