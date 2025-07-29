@@ -53,18 +53,24 @@
     border-radius: 15px;
     padding: 30px 25px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
   }
   main h1 {
     color: #004d40;
     font-size: 2.8rem;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     text-align: center;
   }
   .toggle-buttons {
     display: flex;
     justify-content: center;
     gap: 25px;
-    margin-bottom: 40px;
+    margin: 20px auto 40px auto;
+    max-width: 400px;
+    /* move buttons below the white box */
+    position: relative;
+    z-index: 2;
   }
   .toggle-buttons button {
     background: transparent;
@@ -164,6 +170,7 @@
     .toggle-buttons {
       flex-wrap: wrap;
       gap: 15px;
+      margin-top: 10px;
     }
   }
 </style>
@@ -187,18 +194,22 @@
 
 <main>
   <h1>Welcome to My Freelancing Services</h1>
+</main>
 
-  <div class="toggle-buttons">
-    <button class="active" onclick="showSection('home', this)">Home</button>
-    <button onclick="showSection('services', this)">Our Services</button>
-    <button onclick="showSection('whychoose', this)">Why Choose Me</button>
-  </div>
+<div class="toggle-buttons">
+  <button class="active" onclick="showSection('home', this)">Home</button>
+  <button onclick="showSection('services', this)">Our Services</button>
+  <button onclick="showSection('whychoose', this)">Why Choose Me</button>
+</div>
 
-  <section id="home" class="active">
+<section id="home" class="active">
+  <main style="max-width:900px; margin:auto; padding: 20px;">
     <p>I help you craft professional documents that speak for you.</p>
-  </section>
+  </main>
+</section>
 
-  <section id="services">
+<section id="services">
+  <main style="max-width:900px; margin:auto; padding: 20px;">
     <h2 style="text-align:center; color:#00796b;">My Services</h2>
     <div class="cards">
       <div class="card">
@@ -222,51 +233,9 @@
         <p>Convert scanned files into editable Word format.</p>
       </div>
     </div>
-  </section>
+  </main>
+</section>
 
-  <section id="whychoose">
-    <h2 style="text-align:center; color:#00796b;">Why Choose Me?</h2>
-    <p style="font-size: 18px; max-width: 800px; margin: auto 0 24px 0;">
-      I provide reliable, quality service with a personal touch. Whether it's crafting the perfect CV or accurately transcribing documents, your satisfaction is my priority.
-    </p>
-    <div class="cards">
-      <div class="card">
-        <h3>✔ Fast Delivery</h3>
-        <p>Quick turnaround without sacrificing quality.</p>
-      </div>
-      <div class="card">
-        <h3>✔ Affordable</h3>
-        <p>Reasonable pricing for everyone.</p>
-      </div>
-      <div class="card">
-        <h3>✔ Unlimited Revisions</h3>
-        <p>Your satisfaction guaranteed with multiple edits.</p>
-      </div>
-      <div class="card">
-        <h3>✔ Bilingual Services</h3>
-        <p>English and Nepali both supported.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<a href="https://wa.me/9779765808346" target="_blank" class="message-now-btn" rel="noopener noreferrer">
-  Message Now
-</a>
-
-<script>
-  function showSection(id, btn) {
-    const sections = ['home', 'services', 'whychoose'];
-    sections.forEach(sectionId => {
-      document.getElementById(sectionId).classList.remove('active');
-    });
-    document.getElementById(id).classList.add('active');
-
-    const buttons = document.querySelectorAll('.toggle-buttons button');
-    buttons.forEach(b => b.classList.remove('active'));
-    if(btn) btn.classList.add('active');
-  }
-</script>
-
-</body>
-</html>
+<section id="whychoose">
+  <main style="max-width:900px; margin:auto; padding: 20px;">
+    <h2 style="te
