@@ -1,79 +1,310 @@
-﻿<nav>
-  <div class="nav-left" style="gap: 25px; font-weight: bold;">
-    <span>Contact Me:</span>
-    <a href="https://wa.me/9779765808346" target="_blank">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" style="width:20px; height:20px;"/> 9765808346
-    </a>
-    <a href="https://www.facebook.com/shivrajcvtypingservice" target="_blank">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" style="width:20px; height:20px;"/> Shivraj CV & Typing Service
-    </a>
-    <a href="https://www.fiverr.com/shivrajsingh206" target="_blank">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/fiverr.png" alt="Fiverr" style="width:20px; height:20px;"/> shivrajsingh206
-    </a>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shivraj CV & Typing Service</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+    background-size: cover;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 77, 64, 0.95);
+    padding: 10px 20px;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+  .nav-left {
+    display: flex;
+    gap: 20px;
+  }
+  .nav-left button {
+    background: transparent;
+    border: 2px solid #b2dfdb;
+    color: #b2dfdb;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .nav-left button:hover,
+  .nav-left button.active {
+    background-color: #b2dfdb;
+    color: #004d40;
+    border-color: #b2dfdb;
+  }
+  .nav-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .nav-right a {
+    color: #b2dfdb;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  .nav-right a:hover {
+    color: #fff;
+  }
+  .nav-right img {
+    width: 20px;
+    height: 20px;
+  }
+  section {
+    max-width: 900px;
+    margin: 30px auto 60px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: none;
+    animation: fadeIn 0.7s ease forwards;
+  }
+  section.active {
+    display: block;
+  }
+  #home {
+    display: block; /* Home always visible initially */
+  }
+  #home h1 {
+    color: #004d40;
+    font-size: 3rem;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  #home p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    color: #00695c;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px 20px;
+    width: 260px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  }
+  .card h3 {
+    margin-top: 0;
+    color: #00796b;
+  }
+  .card p {
+    font-size: 0.9rem;
+    color: #444;
+  }
+  footer {
+    background: rgba(0, 77, 64, 0.95);
+    color: white;
+    padding: 14px 20px;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    text-align: left;
+  }
+  .footer-contact {
+    font-weight: 600;
+  }
+  .message-now-btn {
+    width: 100%;
+    background-color: #25d366;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 16px 0;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+  }
+  .message-now-btn:hover {
+    background-color: #1ebe5d;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  /* Responsive */
+  @media(max-width: 720px) {
+    nav {
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .nav-left {
+      gap: 12px;
+    }
+    .nav-right {
+      justify-content: flex-start;
+      gap: 12px;
+    }
+    section {
+      margin: 20px 15px 80px 15px;
+      padding: 20px 15px;
+      width: auto;
+    }
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <button class="active" onclick="showSection('home', this)">Home</button>
   </div>
   <div class="nav-right">
-    <button onclick="showSection('home')">Home</button>
-    <button onclick="showSection('services')">My Services</button>
-    <button onclick="showSection('whychoose')">Why Choose Me</button>
+    <a href="https://wa.me/9779765808346" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" /> 9765808346
+    </a>
+    <a href="https://www.facebook.com/shivrajcvtypingservice" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" /> Shivraj CV & Typing Service
+    </a>
+    <a href="https://www.fiverr.com/shivrajsingh206" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/fiverr.png" alt="Fiverr" style="width:20px; height:20px;" /> shivrajsingh206
+    </a>
   </div>
 </nav>
 
-<section id="services" style="display:none;">
-  <div class="services">
-    <div class="service-card">
+<section id="home" class="active">
+  <h1>Welcome to My Freelancing Services</h1>
+  <p>I help you craft professional documents that speak for you.</p>
+</section>
+
+<section id="services">
+  <h2 style="text-align:center; color:#00796b;">My Services</h2>
+  <div class="cards">
+    <div class="card">
       <h3>CV Design</h3>
       <p>Modern & attractive CVs for job applications.</p>
     </div>
-    <div class="service-card">
+    <div class="card">
       <h3>Typing Service</h3>
       <p>Fast and accurate typing in English/Nepali.</p>
     </div>
-    <div class="service-card">
+    <div class="card">
       <h3>Cover Letter</h3>
       <p>Customized letters that match your CV.</p>
     </div>
-    <div class="service-card">
+    <div class="card">
       <h3>Audio Transcription</h3>
       <p>Audio/video to text in clear format.</p>
     </div>
-    <div class="service-card">
+    <div class="card">
       <h3>Image/PDF to Word</h3>
       <p>Convert scanned files into editable Word format.</p>
     </div>
   </div>
 </section>
 
-<section id="whychoose" style="display:none;">
-  <p style="font-size: 18px; max-width: 800px; margin: auto;">
+<section id="whychoose">
+  <h2 style="text-align:center; color:#00796b;">Why Choose Me?</h2>
+  <p style="font-size: 18px; max-width: 800px; margin: auto 0 24px 0;">
     I provide reliable, quality service with a personal touch. Whether it's crafting the perfect CV or accurately transcribing documents, your satisfaction is my priority.
   </p>
-  <div class="why-cards">
-    <div class="why-card">
+  <div class="cards">
+    <div class="card">
       <h3>✔ Fast Delivery</h3>
       <p>Quick turnaround without sacrificing quality.</p>
     </div>
-    <div class="why-card">
+    <div class="card">
       <h3>✔ Affordable</h3>
       <p>Reasonable pricing for everyone.</p>
     </div>
-    <div class="why-card">
+    <div class="card">
       <h3>✔ Unlimited Revisions</h3>
       <p>Your satisfaction guaranteed with multiple edits.</p>
     </div>
-    <div class="why-card">
+    <div class="card">
       <h3>✔ Bilingual Services</h3>
       <p>English and Nepali both supported.</p>
     </div>
   </div>
 </section>
 
+<footer class="footer-contact">
+  Contact Me: WhatsApp 9765808346 | Facebook Shivraj CV & Typing Service | Fiverr shivrajsingh206
+</footer>
+
+<a href="https://wa.me/9779765808346" target="_blank" class="message-now-btn" rel="noopener noreferrer">
+  Message Now
+</a>
+
 <script>
-  function showSection(id) {
+  function showSection(id, btn) {
+    // Hide all sections except home only visible at start
     const sections = ['home', 'services', 'whychoose'];
-    sections.forEach(sec => {
-      document.getElementById(sec).style.display = (sec === id) ? 'block' : 'none';
+    sections.forEach(sectionId => {
+      document.getElementById(sectionId).style.display = 'none';
     });
+
+    // Show clicked section except home stays shown only if 'home' clicked
+    if(id === 'home'){
+      document.getElementById('home').style.display = 'block';
+    } else {
+      document.getElementById(id).style.display = 'block';
+      document.getElementById('home').style.display = 'none';
+    }
+
+    // Update button active states
+    const navButtons = document.querySelectorAll('.nav-left button');
+    navButtons.forEach(button => button.classList.remove('active'));
+
+    if(btn){
+      if(id === 'home'){
+        btn.classList.add('active');
+      } else {
+        // Remove active from home btn
+        navButtons[0].classList.remove('active');
+        // Since home is the only button, add a new button for services and whychoose here if needed later
+      }
+    }
   }
-  // Initialize to show home on load
-  window.onload = () => showSection('home');
 </script>
+
+</body>
+</html>
