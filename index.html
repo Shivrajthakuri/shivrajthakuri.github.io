@@ -1,229 +1,31 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Shivraj CV & Typing Service</title>
-<style>
-  body {
-    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
-    background-size: cover; color: #222;
-    min-height: 100vh; display: flex; flex-direction: column;
-  }
-  header {
-    background: rgba(0, 77, 64, 0.95);
-    color: #b2dfdb;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-  }
-  .contact-info {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    font-weight: 600;
-    font-size: 14px;
-    color: #b2dfdb;
-    z-index: 10000;
-  }
-  .contact-info a {
-    color: #b2dfdb;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.3s ease;
-  }
-  .contact-info a:hover {
-    color: #fff;
-  }
-  .contact-info img {
-    width: 20px;
-    height: 20px;
-  }
-
-  main {
-    flex-grow: 1;
-    max-width: 900px;
-    margin: 40px auto 80px auto;
-  }
-
-  .welcome-container {
-    background: rgba(255,255,255,0.9);
-    border-radius: 15px;
-    padding: 30px 25px 20px 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    text-align: center;
-  }
-  .welcome-container h1 {
-    color: #004d40;
-    font-size: 2.8rem;
-    margin: 0 0 25px 0;
-  }
-  .toggle-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin: 0 auto 10px auto;
-    max-width: 400px;
-  }
-  .toggle-buttons button {
-    background: transparent;
-    border: 2px solid #00796b;
-    color: #00796b;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 10px 28px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  .toggle-buttons button:hover,
-  .toggle-buttons button.active {
-    background-color: #00796b;
-    color: #fff;
-    border-color: #00796b;
-  }
-  section {
-    display: none;
-    animation: fadeIn 0.7s ease forwards;
-    max-width: 900px;
-    margin: 20px auto 80px auto;
-    background: rgba(255,255,255,0.9);
-    border-radius: 15px;
-    padding: 30px 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  }
-  section.active {
-    display: block;
-  }
-  @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-  }
-  @media(max-width: 720px) {
-    .toggle-buttons {
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    section {
-      margin: 15px 10px 60px 10px;
-      padding: 20px 15px;
-    }
-    .welcome-container {
-      margin: 20px 10px 0 10px;
-      padding: 20px 15px 15px 15px;
-    }
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <h2>Contact Me:</h2>
-  <div class="contact-info">
-    <a href="https://wa.me/9779765808346" target="_blank" rel="noopener noreferrer">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" /> 9765808346
-    </a>
-    <a href="https://www.facebook.com/shivrajcvtypingservice" target="_blank" rel="noopener noreferrer">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" /> Shivraj CV & Typing Service
-    </a>
-    <a href="https://www.fiverr.com/shivrajsingh206" target="_blank" rel="noopener noreferrer">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/fiverr.png" alt="Fiverr" style="width:20px; height:20px;" /> shivrajsingh206
-    </a>
-  </div>
-</header>
-
-<main>
-  <div class="welcome-container">
+﻿<!-- Suru ma hero ra services combine gareko -->
+<section id="home">
+  <div class="hero">
     <h1>Welcome to My Freelancing Services</h1>
-
-    <div class="toggle-buttons">
-      <button class="active" onclick="showSection('home', this)">Home</button>
-      <button onclick="showSection('services', this)">Our Services</button>
-      <button onclick="showSection('whychoose', this)">Why Choose Me</button>
-    </div>
+    <p>I help you craft professional documents that speak for you.</p>
   </div>
 
-  <section id="home" class="active">
-    <p style="font-size: 1.2rem; max-width: 800px; margin: auto;">
-      I help you craft professional documents that speak for you.
-    </p>
-  </section>
-
-  <section id="services">
-    <h2 style="color:#00796b; text-align:center;">My Services</h2>
-    <div style="max-width:800px; margin:auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-      <div style="background:#fff; border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h3>CV Design</h3>
-        <p>Modern & attractive CVs for job applications.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h3>Typing Service</h3>
-        <p>Fast and accurate typing in English/Nepali.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h3>Cover Letter</h3>
-        <p>Customized letters that match your CV.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h3>Audio Transcription</h3>
-        <p>Audio/video to text in clear format.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h3>Image/PDF to Word</h3>
-        <p>Convert scanned files into editable Word format.</p>
-      </div>
+  <h2 style="text-align: center; color: #00796b;">My Services</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>CV Design</h3>
+      <p>Modern & attractive CVs for job applications.</p>
     </div>
-  </section>
-
-  <section id="whychoose">
-    <h2 style="color:#00796b; text-align:center;">Why Choose Me?</h2>
-    <p style="max-width: 800px; margin: 10px auto 30px auto; font-size:1.1rem; text-align:center;">
-      I provide reliable, quality service with a personal touch. Whether it's crafting the perfect CV or accurately transcribing documents, your satisfaction is my priority.
-    </p>
-    <div style="max-width: 800px; margin:auto; display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-      <div style="background:#fff; border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h3>✔ Fast Delivery</h3>
-        <p>Quick turnaround without sacrificing quality.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h3>✔ Affordable</h3>
-        <p>Reasonable pricing for everyone.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h3>✔ Unlimited Revisions</h3>
-        <p>Your satisfaction guaranteed with multiple edits.</p>
-      </div>
-      <div style="background:#fff; border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-        <h3>✔ Bilingual Services</h3>
-        <p>English and Nepali both supported.</p>
-      </div>
+    <div class="service-card">
+      <h3>Typing Service</h3>
+      <p>Fast and accurate typing in English/Nepali.</p>
     </div>
-  </section>
-</main>
-
-<a href="https://wa.me/9779765808346" target="_blank" style="position:fixed; bottom:15px; right:15px; background:#25d366; color:#fff; padding:12px 25px; border-radius:30px; font-weight:700; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.25); transition:background-color 0.3s ease; z-index:10000;">Message Now</a>
-
-<script>
-  function showSection(id, btn) {
-    // Hide all sections
-    document.querySelectorAll('section').forEach(sec => {
-      sec.classList.remove('active');
-    });
-    // Show the selected section
-    document.getElementById(id).classList.add('active');
-    // Manage button active states
-    document.querySelectorAll('.toggle-buttons button').forEach(button => {
-      button.classList.remove('active');
-    });
-    if(btn) btn.classList.add('active');
-  }
-</script>
-
-</body>
-</html>
+    <div class="service-card">
+      <h3>Cover Letter</h3>
+      <p>Customized letters that match your CV.</p>
+    </div>
+    <div class="service-card">
+      <h3>Audio Transcription</h3>
+      <p>Audio/video to text in clear format.</p>
+    </div>
+    <div class="service-card">
+      <h3>Image/PDF to Word</h3>
+      <p>Convert scanned files into editable Word format.</p>
+    </div>
+  </div>
+</section>
