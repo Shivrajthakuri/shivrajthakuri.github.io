@@ -8,11 +8,12 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f5f5f5;
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
     }
     header {
-      background: #00796b;
+      background: rgba(0, 121, 107, 0.9);
       padding: 20px;
       color: white;
       text-align: center;
@@ -21,30 +22,72 @@
       display: flex;
       justify-content: center;
       gap: 20px;
-      background: #004d40;
+      background: rgba(0, 77, 64, 0.9);
       padding: 10px 0;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #b2dfdb;
+      text-decoration: underline;
     }
     section {
       padding: 40px 20px;
       max-width: 1000px;
-      margin: auto;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+    }
+    section:nth-of-type(1) {
+      animation-delay: 0.2s;
+    }
+    section:nth-of-type(2) {
+      animation-delay: 0.4s;
+    }
+    section:nth-of-type(3) {
+      animation-delay: 0.6s;
+    }
+    section:nth-of-type(4) {
+      animation-delay: 0.8s;
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .hero {
       text-align: center;
       padding: 60px 20px;
-      background: linear-gradient(to right, #80cbc4, #e0f7fa);
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
     }
     .hero h1 {
       font-size: 40px;
       color: #004d40;
+      animation: fadeIn 1.5s ease-in-out;
     }
     .hero p {
       font-size: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); opacity: 1; }
     }
     .services {
       display: flex;
@@ -58,9 +101,15 @@
       padding: 20px;
       width: 250px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      cursor: default;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
     .why {
-      background: #e0f7fa;
+      background: rgba(224, 247, 250, 0.9);
       text-align: center;
     }
     .why h2 {
@@ -79,22 +128,61 @@
       padding: 20px;
       width: 250px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      cursor: default;
+    }
+    .why-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
     .contact {
-      background: #f0f0f0;
+      background: rgba(240, 240, 240, 0.95);
       text-align: center;
+    }
+    .contact a.cta-button {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .contact a.cta-button:hover {
+      background-color: #1ebe5d;
     }
     .footer {
       text-align: center;
-      background: #004d40;
+      background: rgba(0, 77, 64, 0.95);
       color: white;
       padding: 15px;
       font-size: 14px;
+      margin-top: 40px;
     }
     .icon {
       width: 20px;
       vertical-align: middle;
       margin-right: 6px;
+    }
+    /* Fixed "Message Now" button on right side */
+    .message-now-btn {
+      position: fixed;
+      top: 50%;
+      right: 10px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px 0 0 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 999;
+    }
+    .message-now-btn:hover {
+      background-color: #1ebe5d;
     }
   </style>
 </head>
@@ -146,7 +234,7 @@
   <section class="why" id="whychoose">
     <h2>Why Choose Me?</h2>
     <p style="font-size: 18px; max-width: 800px; margin: auto;">
-      I’m dedicated to delivering high-quality, fast, and reliable services tailored to your needs.
+      I provide reliable, quality service with a personal touch. Whether it's crafting the perfect CV or accurately transcribing documents, your satisfaction is my priority.
     </p>
     <div class="why-cards">
       <div class="why-card">
@@ -158,12 +246,12 @@
         <p>Reasonable pricing for everyone.</p>
       </div>
       <div class="why-card">
-        <h3>✔ Satisfaction</h3>
-        <p>Unlimited revisions until you're happy.</p>
+        <h3>✔ Unlimited Revisions</h3>
+        <p>Your satisfaction guaranteed with multiple edits.</p>
       </div>
       <div class="why-card">
-        <h3>✔ English/Nepali</h3>
-        <p>Services available in both languages.</p>
+        <h3>✔ Bilingual Services</h3>
+        <p>English and Nepali both supported.</p>
       </div>
     </div>
   </section>
@@ -172,14 +260,4 @@
     <h2>Contact Me</h2>
     <p>
       📧 Fiverr: <a href="https://www.fiverr.com/s/e6jXZpm" target="_blank">shivrajsingh206</a><br />
-      <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" class="icon"/> WhatsApp: 9765808346 <br/>
-      <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" class="icon"/> Facebook: Shivraj Singh Thakuri
-    </p>
-  </section>
-
-  <div class="footer">
-    &copy; 2025 Shivraj CV & Typing Service | Designed with ❤️ by Shivraj
-  </div>
-
-</body>
-</html>
+      <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" class="ic
