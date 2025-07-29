@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shivraj CV & Typing Service</title>
+<style>
+  /* Basic Reset */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+  }
+  nav {
+    background: #005f73;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav div {
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  nav div:hover, nav .active {
+    background: #0a9396;
+  }
+  section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    display: none;
+    animation: fadeIn 0.7s ease forwards;
+  }
+  section.active {
+    display: block;
+  }
+  h1, h2 {
+    color: #001219;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul li {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 25px;
+  }
+  ul li::before {
+    content: '✔️';
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #005f73;
+    color: white;
+    margin-top: 4rem;
+  }
+  img.profile-pic {
+    max-width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 1rem auto 2rem auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    section {
+      margin: 1rem;
+      padding: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="active" onclick="showSection('home', this)">Home</div>
+  <div onclick="showSection('about', this)">About Me</div>
+  <div onclick="showSection('services', this)">Services</div>
+  <div onclick="showSection('contact', this)">Contact</div>
+</nav>
+
+<section id="home" class="active">
+  <h1>Welcome to Shivraj CV & Typing Service</h1>
+  <img src="https://i.imgur.com/6Yz28Vo.jpg" alt="Shivraj Singh Thakuri" class="profile-pic" />
+  <p>Offering professional CV design, typing, transcription, and cover letter writing services to help you succeed.</p>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <img src="https://i.imgur.com/7yUvePI.jpg" alt="About Shivraj" class="profile-pic" />
+  <p>Hi, I am Shivraj Singh Thakuri. I am passionate about freelancing and dedicated to providing quality work that meets client needs.</p>
+</section>
+
+<section id="services">
+  <h2>Services</h2>
+  <ul>
+    <li>CV / Resume Design</li>
+    <li>Typing Service (English / Nepali)</li>
+    <li>Cover Letter Writing</li>
+    <li>Audio to Text Transcription</li>
+    <li>Image / PDF to Word Conversion</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p><strong>Fiverr ID:</strong> shivrajsingh206</p>
+  <p><strong>Fiverr Link:</strong> <a href="https://www.fiverr.com/s/e6jXZpm" target="_blank" rel="noopener noreferrer">https://www.fiverr.com/s/e6jXZpm</a></p>
+  <p><strong>Call / WhatsApp:</strong> 9765808346</p>
+</section>
+
+<footer>
+  &copy; 2025 Shivraj CV & Typing Service. All rights reserved.
+</footer>
+
+<script>
+  function showSection(id, elem) {
+    // Hide all sections
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.remove('active');
+    });
+    // Remove active class from all nav divs
+    document.querySelectorAll('nav div').forEach(div => {
+      div.classList.remove('active');
+    });
+    // Show selected section
+    document.getElementById(id).classList.add('active');
+    // Set active class on clicked nav item
+    elem.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
