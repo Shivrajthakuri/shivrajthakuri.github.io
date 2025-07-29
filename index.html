@@ -5,158 +5,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Shivraj CV & Typing Service</title>
 <style>
+  /* Basic reset and fonts */
   body {
-    margin:0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
-    background-size: cover;
-    color: #222;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    background-size: cover; color: #222;
+    min-height: 100vh; display: flex; flex-direction: column;
   }
+  /* Navbar styling */
   nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0, 77, 64, 0.95);
-    padding: 10px 20px;
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    position: relative;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(0, 77, 64, 0.95); padding: 12px 24px; color: #fff;
+    position: sticky; top: 0; z-index: 9999;
   }
+  /* Left side is empty to remove middle contact */
   .nav-left {
-    display: flex;
-    gap: 20px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 30%;
   }
-  .nav-left button {
-    background: transparent;
-    border: 2px solid #b2dfdb;
-    color: #b2dfdb;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 8px 18px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  /* Center nav buttons */
+  .nav-center {
+    display: flex; gap: 20px; justify-content: center; width: 40%;
   }
-  .nav-left button:hover,
-  .nav-left button.active {
-    background-color: #b2dfdb;
-    color: #004d40;
-    border-color: #b2dfdb;
+  .nav-center button {
+    background: transparent; border: 2px solid #b2dfdb;
+    color: #b2dfdb; font-weight: 600; font-size: 16px; padding: 8px 22px;
+    border-radius: 30px; cursor: pointer; transition: all 0.3s ease;
   }
+  .nav-center button:hover,
+  .nav-center button.active {
+    background-color: #b2dfdb; color: #004d40; border-color: #b2dfdb;
+  }
+  /* Right side contact */
   .nav-right {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+    display: flex; gap: 20px; align-items: center; width: 30%; justify-content: flex-end;
   }
   .nav-right a {
-    color: #b2dfdb;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-weight: 600;
-    font-size: 14px;
+    color: #b2dfdb; text-decoration: none; display: flex;
+    align-items: center; gap: 6px; font-weight: 600; font-size: 14px;
     transition: color 0.3s ease;
   }
   .nav-right a:hover {
     color: #fff;
   }
   .nav-right img {
-    width: 20px;
-    height: 20px;
+    width: 20px; height: 20px;
   }
+  /* Sections styling */
   section {
-    max-width: 900px;
-    margin: 30px auto 60px auto;
-    background: rgba(255,255,255,0.9);
-    padding: 30px 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    display: none;
-    animation: fadeIn 0.7s ease forwards;
+    max-width: 900px; margin: 30px auto 80px auto;
+    background: rgba(255,255,255,0.9); padding: 30px 25px;
+    border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: none; animation: fadeIn 0.7s ease forwards;
   }
   section.active {
     display: block;
   }
   #home {
-    display: block; /* Home visible initially */
+    display: block; /* Show home initially */
+    text-align: center;
   }
   #home h1 {
-    color: #004d40;
-    font-size: 3rem;
-    margin-bottom: 12px;
-    text-align: center;
+    color: #004d40; font-size: 3rem; margin-bottom: 12px;
   }
   #home p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
+    font-size: 1.3rem; max-width: 700px; margin: 0 auto;
     color: #00695c;
   }
   .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 28px;
-    justify-content: center;
+    display: flex; flex-wrap: wrap; gap: 28px; justify-content: center;
   }
   .card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 22px 20px;
-    width: 260px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
+    background: #fff; border-radius: 12px; padding: 22px 20px;
+    width: 260px; box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;
   }
   .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    transform: translateY(-6px); box-shadow: 0 10px 25px rgba(0,0,0,0.18);
   }
   .card h3 {
-    margin-top: 0;
-    color: #00796b;
+    margin-top: 0; color: #00796b;
   }
   .card p {
-    font-size: 0.9rem;
-    color: #444;
+    font-size: 0.9rem; color: #444;
   }
-  footer {
-    background: rgba(0, 77, 64, 0.95);
-    color: white;
-    padding: 14px 20px;
-    font-size: 14px;
-    position: sticky;
-    top: 0;
-    text-align: left;
+  /* Footer Contact (Optional, can remove if redundant) */
+  footer.footer-contact {
+    background: rgba(0, 77, 64, 0.95); color: white;
+    padding: 14px 20px; font-size: 14px; text-align: center;
   }
-  .footer-contact {
-    font-weight: 600;
-  }
+  /* Message Now button at bottom */
   .message-now-btn {
-    width: 100%;
-    background-color: #25d366;
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    padding: 16px 0;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 10000;
+    width: 160px; background-color: #25d366; color: white;
+    font-weight: 700; font-size: 16px; padding: 12px 0; border: none;
+    cursor: pointer; text-align: center; text-decoration: none;
+    display: block; position: fixed; bottom: 15px; right: 15px; z-index: 10000;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     transition: background-color 0.3s ease;
   }
   .message-now-btn:hover {
@@ -169,33 +113,24 @@
   /* Responsive */
   @media(max-width: 720px) {
     nav {
-      flex-direction: column;
-      gap: 12px;
-      align-items: flex-start;
-      position: relative;
-      height: auto;
+      flex-wrap: wrap; padding: 12px 12px;
     }
-    .nav-left {
-      position: static;
-      transform: none;
-      justify-content: center;
-      width: 100%;
-      margin-bottom: 10px;
+    .nav-left, .nav-right {
+      width: 100%; justify-content: center; margin: 6px 0;
     }
-    .nav-right {
-      justify-content: flex-start;
-      gap: 12px;
-      width: 100%;
-      overflow-x: auto;
+    .nav-center {
+      width: 100%; justify-content: center; gap: 12px; margin: 10px 0;
     }
     section {
-      margin: 20px 15px 80px 15px;
-      padding: 20px 15px;
+      margin: 20px 15px 100px 15px; padding: 20px 15px;
       width: auto;
     }
     .cards {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: column; align-items: center;
+    }
+    .message-now-btn {
+      width: 90%; left: 5%; right: 5%;
+      bottom: 10px;
     }
   }
 </style>
@@ -203,9 +138,10 @@
 <body>
 
 <nav>
-  <div class="nav-left">
+  <div class="nav-left"></div> <!-- empty to remove middle contact -->
+  <div class="nav-center">
     <button class="active" onclick="showSection('home', this)">Home</button>
-    <button onclick="showSection('services', this)">Services</button>
+    <button onclick="showSection('services', this)">Our Services</button>
     <button onclick="showSection('whychoose', this)">Why Choose Me</button>
   </div>
   <div class="nav-right">
@@ -277,9 +213,12 @@
   </div>
 </section>
 
+<!-- Optional Footer -->
+<!--
 <footer class="footer-contact">
   Contact Me: WhatsApp 9765808346 | Facebook Shivraj CV & Typing Service | Fiverr shivrajsingh206
 </footer>
+-->
 
 <a href="https://wa.me/9779765808346" target="_blank" class="message-now-btn" rel="noopener noreferrer">
   Message Now
@@ -294,8 +233,8 @@
 
     document.getElementById(id).style.display = 'block';
 
-    // Update active button
-    const navButtons = document.querySelectorAll('.nav-left button');
+    // Update active button style
+    const navButtons = document.querySelectorAll('.nav-center button');
     navButtons.forEach(button => button.classList.remove('active'));
     if(btn) btn.classList.add('active');
   }
