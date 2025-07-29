@@ -8,7 +8,7 @@
       body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
+        background: linear-gradient(120deg, #e0f7fa, #ffffff);
       }
       header {
         background-color: #004d40;
@@ -34,12 +34,18 @@
       }
       .contact-info {
         font-size: 14px;
+        text-align: right;
+        flex: 1;
       }
       .hero {
         background-color: white;
         text-align: center;
         padding: 60px 20px 30px;
         animation: fadeIn 1.5s ease-in;
+        border-radius: 10px;
+        margin: 20px auto;
+        width: 80%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
       .hero p.subtext {
         font-size: 16px;
@@ -55,13 +61,27 @@
         background-color: #00796b;
         color: white;
         padding: 10px 20px;
-        margin: 0 10px;
+        margin: 10px;
         text-decoration: none;
         border-radius: 5px;
         transition: background-color 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       }
       .buttons a:hover {
         background-color: #004d40;
+      }
+      .section {
+        width: 80%;
+        margin: 40px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        animation: fadeIn 1.2s ease-in;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .section h2 {
+        color: #00796b;
+        margin-bottom: 10px;
       }
       .footer-button {
         text-align: center;
@@ -81,36 +101,17 @@
         background-color: #004d40;
         transform: scale(1.05);
       }
-
       @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
-
       @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-
       @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
       }
     </style>
   </head>
@@ -136,6 +137,16 @@
       <a href="#services">Our Service</a>
       <a href="#why">Why Choose Me</a>
     </div>
+
+    <section class="section" id="services">
+      <h2>Our Services</h2>
+      <p>I offer high-quality CV writing, document formatting, typing services, and cover letter crafting to meet your professional needs.</p>
+    </section>
+
+    <section class="section" id="why">
+      <h2>Why Choose Me</h2>
+      <p>With years of experience and a dedication to client satisfaction, I ensure your documents stand out. Affordable pricing and quick delivery are guaranteed!</p>
+    </section>
 
     <div class="footer-button">
       <a href="#contact">Message Now</a>
