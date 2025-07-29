@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shivraj CV & Typing Service</title>
   <style>
     body {
@@ -20,20 +20,42 @@
     }
     nav {
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
       background: rgba(0, 77, 64, 0.9);
-      padding: 10px 0;
+      padding: 10px 20px;
+      color: white;
+      font-weight: bold;
+      flex-wrap: wrap;
     }
-    nav a {
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .nav-left img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+    .nav-left a, .nav-right a {
       color: white;
       text-decoration: none;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
       font-weight: bold;
-      transition: color 0.3s ease;
+      font-size: 14px;
     }
-    nav a:hover {
+    .nav-left a:hover, .nav-right a:hover {
       color: #b2dfdb;
       text-decoration: underline;
+    }
+    .nav-right {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
     section {
       padding: 40px 20px;
@@ -41,31 +63,6 @@
       margin: 40px auto;
       background-color: rgba(255, 255, 255, 0.9);
       border-radius: 10px;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1s ease forwards;
-    }
-    section:nth-of-type(1) {
-      animation-delay: 0.2s;
-    }
-    section:nth-of-type(2) {
-      animation-delay: 0.4s;
-    }
-    section:nth-of-type(3) {
-      animation-delay: 0.6s;
-    }
-    section:nth-of-type(4) {
-      animation-delay: 0.8s;
-    }
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
     .hero {
       text-align: center;
@@ -76,64 +73,49 @@
     .hero h1 {
       font-size: 40px;
       color: #004d40;
-      animation: fadeIn 1.5s ease-in-out;
     }
     .hero p {
       font-size: 20px;
-      animation: fadeIn 1.5s ease-in-out;
-      animation-delay: 0.5s;
-      animation-fill-mode: forwards;
-      opacity: 0;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); opacity: 1; }
+    button.toggle-btn {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      transition: background-color 0.3s ease;
     }
-    .services {
+    button.toggle-btn:hover {
+      background-color: #004d40;
+    }
+    .collapsible-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .collapsible-content.show {
+      max-height: 1000px; /* large enough to show content */
+    }
+    .services, .why-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
     }
-    .service-card {
+    .service-card, .why-card {
       background: white;
       border-radius: 10px;
       padding: 20px;
       width: 250px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      cursor: default;
     }
-    .service-card:hover {
+    .service-card:hover, .why-card:hover {
       transform: scale(1.05);
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    .why {
-      background: rgba(224, 247, 250, 0.9);
-      text-align: center;
-    }
-    .why h2 {
-      color: #005f73;
-    }
-    .why-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
-    .why-card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      width: 250px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      cursor: default;
-    }
-    .why-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
     }
     .contact {
       background: rgba(240, 240, 240, 0.95);
@@ -164,7 +146,6 @@
     .icon {
       width: 20px;
       vertical-align: middle;
-      margin-right: 6px;
     }
     /* Fixed "Message Now" button on right side */
     .message-now-btn {
@@ -194,10 +175,25 @@
   </header>
 
   <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#whychoose">Why Choose Me</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-left">
+      <a href="#contact">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp"/>
+        9765808346
+      </a>
+      <a href="https://www.facebook.com/shivrajcvtypingservice" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"/>
+        Shivraj CV & Typing Service
+      </a>
+      <a href="https://www.fiverr.com/shivrajsingh206" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/fiverr.png" alt="Fiverr" style="width:24px;height:24px;"/>
+        shivrajsingh206
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#whychoose">Why Choose Me</a>
+    </div>
   </nav>
 
   <section class="hero" id="home">
@@ -206,52 +202,56 @@
   </section>
 
   <section id="services">
-    <h2 style="text-align: center; color: #00796b;">My Services</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>CV Design</h3>
-        <p>Modern & attractive CVs for job applications.</p>
-      </div>
-      <div class="service-card">
-        <h3>Typing Service</h3>
-        <p>Fast and accurate typing in English/Nepali.</p>
-      </div>
-      <div class="service-card">
-        <h3>Cover Letter</h3>
-        <p>Customized letters that match your CV.</p>
-      </div>
-      <div class="service-card">
-        <h3>Audio Transcription</h3>
-        <p>Audio/video to text in clear format.</p>
-      </div>
-      <div class="service-card">
-        <h3>Image/PDF to Word</h3>
-        <p>Convert scanned files into editable Word format.</p>
+    <button class="toggle-btn" onclick="toggleContent('services-content')">My Services</button>
+    <div id="services-content" class="collapsible-content">
+      <div class="services">
+        <div class="service-card">
+          <h3>CV Design</h3>
+          <p>Modern & attractive CVs for job applications.</p>
+        </div>
+        <div class="service-card">
+          <h3>Typing Service</h3>
+          <p>Fast and accurate typing in English/Nepali.</p>
+        </div>
+        <div class="service-card">
+          <h3>Cover Letter</h3>
+          <p>Customized letters that match your CV.</p>
+        </div>
+        <div class="service-card">
+          <h3>Audio Transcription</h3>
+          <p>Audio/video to text in clear format.</p>
+        </div>
+        <div class="service-card">
+          <h3>Image/PDF to Word</h3>
+          <p>Convert scanned files into editable Word format.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="why" id="whychoose">
-    <h2>Why Choose Me?</h2>
-    <p style="font-size: 18px; max-width: 800px; margin: auto;">
-      I provide reliable, quality service with a personal touch. Whether it's crafting the perfect CV or accurately transcribing documents, your satisfaction is my priority.
-    </p>
-    <div class="why-cards">
-      <div class="why-card">
-        <h3>✔ Fast Delivery</h3>
-        <p>Quick turnaround without sacrificing quality.</p>
-      </div>
-      <div class="why-card">
-        <h3>✔ Affordable</h3>
-        <p>Reasonable pricing for everyone.</p>
-      </div>
-      <div class="why-card">
-        <h3>✔ Unlimited Revisions</h3>
-        <p>Your satisfaction guaranteed with multiple edits.</p>
-      </div>
-      <div class="why-card">
-        <h3>✔ Bilingual Services</h3>
-        <p>English and Nepali both supported.</p>
+    <button class="toggle-btn" onclick="toggleContent('whychoose-content')">Why Choose Me?</button>
+    <div id="whychoose-content" class="collapsible-content">
+      <p style="font-size: 18px; max-width: 800px; margin: auto;">
+        I provide reliable, quality service with a personal touch. Whether it's crafting the perfect CV or accurately transcribing documents, your satisfaction is my priority.
+      </p>
+      <div class="why-cards">
+        <div class="why-card">
+          <h3>✔ Fast Delivery</h3>
+          <p>Quick turnaround without sacrificing quality.</p>
+        </div>
+        <div class="why-card">
+          <h3>✔ Affordable</h3>
+          <p>Reasonable pricing for everyone.</p>
+        </div>
+        <div class="why-card">
+          <h3>✔ Unlimited Revisions</h3>
+          <p>Your satisfaction guaranteed with multiple edits.</p>
+        </div>
+        <div class="why-card">
+          <h3>✔ Bilingual Services</h3>
+          <p>English and Nepali both supported.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -260,4 +260,24 @@
     <h2>Contact Me</h2>
     <p>
       📧 Fiverr: <a href="https://www.fiverr.com/s/e6jXZpm" target="_blank">shivrajsingh206</a><br />
-      <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" class="ic
+      <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" class="icon" alt="WhatsApp"/> WhatsApp Only: 9765808346 <br/>
+      <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" class="icon" alt="Facebook"/> Facebook: Shivraj CV & Typing Service
+    </p>
+    <a href="https://wa.me/9779765808346" target="_blank" class="cta-button">💬 Message Now</a>
+  </section>
+
+  <a href="https://wa.me/9779765808346" target="_blank" class="message-now-btn">Message Now</a>
+
+  <div class="footer">
+    &copy; 2025 Shivraj CV & Typing Service | Designed with ❤️ by Shivraj
+  </div>
+
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      content.classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
