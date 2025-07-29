@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Shivraj CV & Typing Service</title>
 <style>
-  * {
-    box-sizing: border-box;
-  }
   body {
     margin:0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -86,7 +83,7 @@
     display: block;
   }
   #home {
-    display: block; /* Home always visible initially */
+    display: block; /* Home visible initially */
   }
   #home h1 {
     color: #004d40;
@@ -196,6 +193,8 @@
 <nav>
   <div class="nav-left">
     <button class="active" onclick="showSection('home', this)">Home</button>
+    <button onclick="showSection('services', this)">Services</button>
+    <button onclick="showSection('whychoose', this)">Why Choose Me</button>
   </div>
   <div class="nav-right">
     <a href="https://wa.me/9779765808346" target="_blank" rel="noopener noreferrer">
@@ -276,33 +275,17 @@
 
 <script>
   function showSection(id, btn) {
-    // Hide all sections except home only visible at start
     const sections = ['home', 'services', 'whychoose'];
     sections.forEach(sectionId => {
       document.getElementById(sectionId).style.display = 'none';
     });
 
-    // Show clicked section except home stays shown only if 'home' clicked
-    if(id === 'home'){
-      document.getElementById('home').style.display = 'block';
-    } else {
-      document.getElementById(id).style.display = 'block';
-      document.getElementById('home').style.display = 'none';
-    }
+    document.getElementById(id).style.display = 'block';
 
-    // Update button active states
+    // Update active button
     const navButtons = document.querySelectorAll('.nav-left button');
     navButtons.forEach(button => button.classList.remove('active'));
-
-    if(btn){
-      if(id === 'home'){
-        btn.classList.add('active');
-      } else {
-        // Remove active from home btn
-        navButtons[0].classList.remove('active');
-        // Since home is the only button, add a new button for services and whychoose here if needed later
-      }
-    }
+    if(btn) btn.classList.add('active');
   }
 </script>
 
