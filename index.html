@@ -1,200 +1,24 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shivraj CV & Typing Service</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c') no-repeat center center fixed;
-      background-size: cover;
-      color: #333;
-    }
-    header {
-      background: rgba(0, 121, 107, 0.9);
-      padding: 20px;
-      color: white;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0, 77, 64, 0.9);
-      padding: 10px 20px;
-      color: white;
-      font-weight: bold;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      font-size: 14px;
-    }
-    .nav-left a {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .nav-left a img {
-      width: 20px;
-      height: 20px;
-    }
-    .nav-left a:hover {
-      color: #b2dfdb;
-      text-decoration: underline;
-    }
-    .nav-right {
-      display: flex;
-      gap: 25px;
-    }
-    .nav-right button {
-      background: none;
-      border: none;
-      color: white;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    .nav-right button:hover {
-      background-color: #004d40;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 30px auto;
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 10px;
-    }
-    .hero h1 {
-      font-size: 40px;
-      color: #004d40;
-    }
-    .hero p {
-      font-size: 20px;
-    }
-    .collapsible-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
-    .collapsible-content.show {
-      max-height: 1000px; /* big enough for content */
-    }
-    .services, .why-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-    .service-card, .why-card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      width: 250px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      cursor: default;
-    }
-    .service-card:hover, .why-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    .contact {
-      background: rgba(240, 240, 240, 0.95);
-      text-align: center;
-      border-radius: 10px;
-      max-width: 600px;
-      margin: 30px auto;
-      padding: 30px 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-    .contact a {
-      color: #00796b;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .footer {
-      text-align: center;
-      background: rgba(0, 77, 64, 0.95);
-      color: white;
-      padding: 15px;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-    .icon {
-      width: 20px;
-      vertical-align: middle;
-    }
-    /* Fixed Message Now Button */
-    .message-now-btn {
-      position: fixed;
-      top: 50%;
-      right: 10px;
-      background-color: #25d366;
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px 0 0 30px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
-      z-index: 10000;
-    }
-    .message-now-btn:hover {
-      background-color: #1ebe5d;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Shivraj CV & Typing Service</h1>
-  <p>Your Trusted Partner for Professional Documents</p>
-</header>
-
-<nav>
-  <div class="nav-left">
+﻿<nav>
+  <div class="nav-left" style="gap: 25px; font-weight: bold;">
+    <span>Contact Me:</span>
     <a href="https://wa.me/9779765808346" target="_blank">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp"/> 9765808346
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" style="width:20px; height:20px;"/> 9765808346
     </a>
     <a href="https://www.facebook.com/shivrajcvtypingservice" target="_blank">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook"/> Shivraj CV & Typing Service
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png" alt="Facebook" style="width:20px; height:20px;"/> Shivraj CV & Typing Service
     </a>
     <a href="https://www.fiverr.com/shivrajsingh206" target="_blank">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/fiverr.png" alt="Fiverr" style="width:20px;height:20px;"/> shivrajsingh206
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/fiverr.png" alt="Fiverr" style="width:20px; height:20px;"/> shivrajsingh206
     </a>
   </div>
   <div class="nav-right">
     <button onclick="showSection('home')">Home</button>
-    <button onclick="toggleSection('services')">My Services</button>
-    <button onclick="toggleSection('whychoose')">Why Choose Me</button>
+    <button onclick="showSection('services')">My Services</button>
+    <button onclick="showSection('whychoose')">Why Choose Me</button>
   </div>
 </nav>
 
-<section class="hero" id="home" style="display: block;">
-  <h1>Welcome to My Freelancing Services</h1>
-  <p>I help you craft professional documents that speak for you.</p>
-</section>
-
-<section id="services" class="collapsible-content">
+<section id="services" style="display:none;">
   <div class="services">
     <div class="service-card">
       <h3>CV Design</h3>
@@ -219,7 +43,7 @@
   </div>
 </section>
 
-<section id="whychoose" class="collapsible-content">
+<section id="whychoose" style="display:none;">
   <p style="font-size: 18px; max-width: 800px; margin: auto;">
     I provide reliable, quality service with a personal touch. Whether it's crafting the perfect CV or accurately transcribing documents, your satisfaction is my priority.
   </p>
@@ -243,47 +67,13 @@
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <h2>Contact Me</h2>
-  <p>
-    📧 Fiverr: <a href="https://www.fiverr.com/s/e6jXZpm" target="_blank">shivrajsingh206</a><br />
-    <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" class="icon" alt="WhatsApp"/> WhatsApp Only: 9765808346 <br/>
-    <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" class="icon" alt="Facebook"/> Facebook: Shivraj CV & Typing Service
-  </p>
-</section>
-
-<a href="https://wa.me/9779765808346" target="_blank" class="message-now-btn">Message Now</a>
-
-<div class="footer">
-  &copy; 2025 Shivraj CV & Typing Service | Designed with ❤️ by Shivraj
-</div>
-
 <script>
-  // Show one section and hide others
   function showSection(id) {
     const sections = ['home', 'services', 'whychoose'];
-    sections.forEach(sectionId => {
-      const el = document.getElementById(sectionId);
-      if(el) el.style.display = (sectionId === id) ? 'block' : 'none';
+    sections.forEach(sec => {
+      document.getElementById(sec).style.display = (sec === id) ? 'block' : 'none';
     });
   }
-
-  // Toggle collapsible sections (services and whychoose)
-  function toggleSection(id) {
-    const el = document.getElementById(id);
-    if(!el) return;
-
-    // If already visible, hide it
-    if(el.style.display === 'block') {
-      el.style.display = 'none';
-      // show home if none visible
-      showSection('home');
-    } else {
-      // show the clicked one and hide home
-      showSection(id);
-    }
-  }
+  // Initialize to show home on load
+  window.onload = () => showSection('home');
 </script>
-
-</body>
-</html>
