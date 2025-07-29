@@ -25,10 +25,14 @@
     position: sticky;
     top: 0;
     z-index: 9999;
+    position: relative;
   }
   .nav-left {
     display: flex;
     gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .nav-left button {
     background: transparent;
@@ -168,13 +172,21 @@
       flex-direction: column;
       gap: 12px;
       align-items: flex-start;
+      position: relative;
+      height: auto;
     }
     .nav-left {
-      gap: 12px;
+      position: static;
+      transform: none;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 10px;
     }
     .nav-right {
       justify-content: flex-start;
       gap: 12px;
+      width: 100%;
+      overflow-x: auto;
     }
     section {
       margin: 20px 15px 80px 15px;
