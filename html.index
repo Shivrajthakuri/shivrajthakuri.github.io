@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivraj CV & Typing Service</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #2d3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #1c2b39;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1c2b39;
+      color: white;
+      margin-top: 40px;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #3fa34d;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shivraj CV & Typing Service</h1>
+    <p>Your one-stop solution for CV, typing, and freelancing needs</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to Shivraj CV & Typing Service</h2>
+    <p>
+      I provide professional CV design, typing services, transcription, cover letter writing, and PDF/image to Word conversions. Whether you're a student or a job seeker, I’m here to support your success.
+    </p>
+    <a class="cta" href="https://www.fiverr.com/s/e6jXZpm" target="_blank">Hire me on Fiverr</a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Shivraj Singh Thakuri, a dedicated freelancer based in Nepal. With a passion for neat formatting and client satisfaction, I’ve helped many people build professional documents to boost their careers.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>✔ CV Design</li>
+      <li>✔ Typing Service (English & Nepali)</li>
+      <li>✔ Cover Letter Writing</li>
+      <li>✔ Audio to Text Transcription</li>
+      <li>✔ Image/PDF to Word Format Conversion</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📩 Fiverr ID: <strong>shivrajsingh206</strong></p>
+    <p>📞 Call/WhatsApp: <strong>9765808346</strong></p>
+    <p>
+      Or hire me directly from Fiverr:
+      <a href="https://www.fiverr.com/s/e6jXZpm" target="_blank">Click here</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Shivraj CV & Typing Service. All rights reserved.</p>
+  </footer>
+</body>
+</html>
