@@ -15,6 +15,7 @@
         url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #e0f2f1;
+      padding-bottom: 60px; /* Footer को लागि तल थोरै ठाउँ राख्ने */
     }
     header {
       background-color: rgba(0, 77, 64, 0.85);
@@ -41,8 +42,8 @@
     .hero {
       background-color: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
-      max-width:  1000px;
-      margin: 60px auto;
+      max-width:  900px;
+      margin: 40px auto 20px;
       padding: 60px 20px 40px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
       text-align: center;
@@ -139,6 +140,22 @@
       box-shadow: 0 10px 35px rgba(38, 166, 154, 0.8);
     }
 
+    /* Footer fixed bottom */
+    footer.footer {
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      background-color: rgba(0, 77, 64, 0.85);
+      color: #e0f2f1;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
     /* Animations */
     @keyframes fadeIn {
       from {opacity: 0;}
@@ -201,6 +218,10 @@
   <a href="https://wa.me/9779765808346" target="_blank">Message Now</a>
 </div>
 
+<footer class="footer">
+  © 2025 Shivraj CV & Typing Service
+</footer>
+
 <script>
   function toggleContent(sectionId) {
     const sections = document.querySelectorAll('.content-section');
@@ -226,7 +247,11 @@
   function type() {
     if (index < headline.length) {
       let char = headline[index];
-      container.textContent += char;
+      if(char === " ") {
+        container.textContent += " ";
+      } else {
+        container.textContent += char;
+      }
       index++;
       setTimeout(type, 150);
     } else {
@@ -239,11 +264,6 @@
   }
   type();
 </script>
-
-<footer class="text-center py-4 bg-gray-100 text-gray-700 text-sm">
-  © 2025 Shivraj CV & Typing Service
-</footer>
-
 
 </body>
 </html>
