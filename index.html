@@ -39,40 +39,40 @@
       text-shadow: 0 0 8px #a7ffeb;
     }
     .hero {
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: white;
       text-align: center;
       padding: 80px 20px 50px;
       margin: 40px auto 20px;
       border-radius: 15px;
       width: 80%;
-      box-shadow: 0 0 25px rgba(0, 150, 136, 0.5);
-      color: #b2dfdb;
+      max-width: 700px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      color: #004d40;
       font-weight: 600;
-      letter-spacing: 1.5px;
-      animation: fadeIn 2s ease forwards;
-      min-height: 110px; /* To avoid jump when typing */
-    }
-    /* Animated typing headline style */
-    #animatedHeadline {
-      font-size: 48px;
-      font-weight: 700;
-      background: linear-gradient(45deg, #ff6ec4, #7873f5, #42e695);
-      background-size: 300% 300%;
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-      animation: rainbowAnimation 5s linear infinite;
-      margin-bottom: 15px;
-      height: 56px;
+      font-size: 36px;
+      letter-spacing: 1.2px;
+      font-family: 'Poppins', Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
     }
     .hero p.subtext {
       font-size: 20px;
       font-weight: 400;
       margin-top: 12px;
-      color: #80cbc4;
+      color: #00796b;
       letter-spacing: 0.5px;
     }
+
+    /* रंगीन अक्षर एनिमेसनका लागि */
+    .colorful {
+      display: inline-block;
+      animation: colorPulse 2s infinite;
+    }
+    @keyframes colorPulse {
+      0%, 100% { color: #00796b; }
+      50% { color: #26a69a; }
+    }
+
     .toggle-buttons {
       width: 80%;
       margin: 30px auto 50px;
@@ -156,11 +156,6 @@
       0% {opacity: 0; transform: translateY(20px);}
       100% {opacity: 1; transform: translateY(0);}
     }
-    @keyframes rainbowAnimation {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
   </style>
 </head>
 <body>
@@ -213,6 +208,7 @@
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(section => {
       if(section.id === sectionId){
+        // Toggle visibility with fade-slide animation
         if(section.style.display === 'block'){
           section.style.display = 'none';
         } else {
@@ -225,25 +221,29 @@
     });
   }
 
-  const text = "Welcome to My Freelancing Services";
-  const speed = 120;
+  const headlineText = "Welcome to My Freelancing Services";
+  const headlineElement = document.getElementById('animatedHeadline');
   let index = 0;
-  const animatedHeadline = document.getElementById('animatedHeadline');
 
-  function typeWriter() {
-    if (index <= text.length) {
-      animatedHeadline.textContent = text.slice(0, index);
+  function typeEffect() {
+    if(index < headlineText.length) {
+      const span = document.createElement('span');
+      span.textContent = headlineText.charAt(index);
+      span.classList.add('colorful');
+      headlineElement.appendChild(span);
+
       index++;
-      setTimeout(typeWriter, speed);
+      setTimeout(typeEffect, 120);
     } else {
       setTimeout(() => {
+        headlineElement.innerHTML = '';
         index = 0;
-        typeWriter();
-      }, 2000);
+        typeEffect();
+      }, 3000);
     }
   }
 
-  window.onload = typeWriter;
+  window.onload = typeEffect;
 </script>
 
 </body>
