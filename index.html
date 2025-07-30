@@ -48,9 +48,23 @@
       box-shadow: 0 0 25px rgba(0, 150, 136, 0.5);
       color: #b2dfdb;
       font-weight: 600;
-      font-size: 40px;
       letter-spacing: 1.5px;
       animation: fadeIn 2s ease forwards;
+      min-height: 110px; /* To avoid jump when typing */
+    }
+    /* Animated typing headline style */
+    #animatedHeadline {
+      font-size: 48px;
+      font-weight: 700;
+      background: linear-gradient(45deg, #ff6ec4, #7873f5, #42e695);
+      background-size: 300% 300%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      animation: rainbowAnimation 5s linear infinite;
+      margin-bottom: 15px;
+      height: 56px;
     }
     .hero p.subtext {
       font-size: 20px;
@@ -142,6 +156,11 @@
       0% {opacity: 0; transform: translateY(20px);}
       100% {opacity: 1; transform: translateY(0);}
     }
+    @keyframes rainbowAnimation {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
   </style>
 </head>
 <body>
@@ -154,7 +173,7 @@
 </header>
 
 <section class="hero" id="home">
-  Welcome to My Freelancing Services
+  <h1 id="animatedHeadline"></h1>
   <p class="subtext">I help you craft professional documents that speak for you.</p>
 </section>
 
@@ -194,7 +213,6 @@
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(section => {
       if(section.id === sectionId){
-        // Toggle visibility with fade-slide animation
         if(section.style.display === 'block'){
           section.style.display = 'none';
         } else {
@@ -206,6 +224,26 @@
       }
     });
   }
+
+  const text = "Welcome to My Freelancing Services";
+  const speed = 120;
+  let index = 0;
+  const animatedHeadline = document.getElementById('animatedHeadline');
+
+  function typeWriter() {
+    if (index <= text.length) {
+      animatedHeadline.textContent = text.slice(0, index);
+      index++;
+      setTimeout(typeWriter, speed);
+    } else {
+      setTimeout(() => {
+        index = 0;
+        typeWriter();
+      }, 2000);
+    }
+  }
+
+  window.onload = typeWriter;
 </script>
 
 </body>
