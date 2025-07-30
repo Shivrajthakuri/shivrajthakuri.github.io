@@ -1,8 +1,160 @@
-﻿<header>
-  <div class="contact-info">
-    📧 <a href="mailto:shivrajcvtypingservice@gmail.com" style="color:white;">shivrajcvtypingservice@gmail.com</a> |
-    📱 <a href="https://wa.me/9779765808346" target="_blank" style="color:white;">WhatsApp: 9765808346</a> |
-    💼 <a href="https://www.fiverr.com/s/Kej5RGk" target="_blank" style="color:white;">Fiverr</a> |
-    📘 <a href="https://www.facebook.com/shivrajcvtypingservices" target="_blank" style="color:white;">Facebook</a>
-  </div>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shivraj CV & Typing Service</title>
+  <style>
+    body {
+      margin: 0; 
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #004d40;
+    }
+    header {
+      background-color: rgba(0, 77, 64, 0.9);
+      color: white;
+      padding: 15px 20px;
+      text-align: right;
+    }
+    header a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    header a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      background-color: rgba(255, 255, 255, 0.9);
+      text-align: center;
+      padding: 60px 20px 30px;
+      margin: 40px auto 20px;
+      border-radius: 10px;
+      width: 80%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    .hero p.subtext {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .toggle-buttons {
+      width: 80%;
+      margin: 20px auto 40px;
+      text-align: center;
+    }
+    .toggle-buttons button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      margin: 0 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .toggle-buttons button:hover {
+      background-color: #004d40;
+    }
+    .content-section {
+      width: 80%;
+      margin: 0 auto 40px;
+      background-color: rgba(255,255,255,0.95);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: none; /* Hidden by default */
+      font-size: 16px;
+      line-height: 1.5;
+      color: #004d40;
+    }
+    .footer-button {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .footer-button a {
+      background-color: #00796b;
+      color: white;
+      padding: 10px 22px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .footer-button a:hover {
+      background-color: #004d40;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  📧 <a href="mailto:shivrajcvtypingservice@gmail.com">shivrajcvtypingservice@gmail.com</a> |
+  📱 <a href="https://wa.me/9779765808346" target="_blank">WhatsApp</a> |
+  📘 <a href="https://www.facebook.com/shivrajcvtypingservices" target="_blank">Facebook</a> |
+  💼 <a href="https://www.fiverr.com/s/Kej5RGk" target="_blank">Fiverr Service</a> |
+  👤 <a href="https://www.fiverr.com/shivrajsingh206" target="_blank">Fiverr Profile</a> |
+  💻 <a href="https://github.com/shivraj-CV-Typing-Service" target="_blank">GitHub</a>
 </header>
+
+<section class="hero" id="home">
+  <h1>Welcome to My Freelancing Services</h1>
+  <p class="subtext">I help you craft professional documents that speak for you.</p>
+</section>
+
+<div class="toggle-buttons">
+  <button onclick="toggleContent('homeContent')">Home</button>
+  <button onclick="toggleContent('servicesContent')">Our Services</button>
+  <button onclick="toggleContent('whyContent')">Why Choose Me</button>
+</div>
+
+<section id="homeContent" class="content-section">
+  <h2>Home</h2>
+  <p>Welcome to my freelancing website! I offer professional CV design, typing services, cover letter writing, and transcription services to help you succeed.</p>
+</section>
+
+<section id="servicesContent" class="content-section">
+  <h2>Our Services</h2>
+  <ul>
+    <li>CV Design and Formatting</li>
+    <li>Typing Service (Fast and Accurate)</li>
+    <li>Cover Letter Writing</li>
+    <li>Audio to Text Transcription</li>
+    <li>Image/PDF to Word Format Conversion</li>
+  </ul>
+</section>
+
+<section id="whyContent" class="content-section">
+  <h2>Why Choose Me</h2>
+  <p>With years of experience, dedication, and affordable pricing, I guarantee high-quality results delivered promptly. Your satisfaction is my priority!</p>
+</section>
+
+<div class="footer-button">
+  <a href="https://wa.me/9779765808346" target="_blank">Message Now</a>
+</div>
+
+<script>
+  function toggleContent(sectionId) {
+    // Hide all content sections first
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => {
+      if (section.id === sectionId) {
+        // Toggle clicked section
+        section.style.display = (section.style.display === 'block') ? 'none' : 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
