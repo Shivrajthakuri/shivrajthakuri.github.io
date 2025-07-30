@@ -88,6 +88,35 @@
       }
     }
 
+    .toggle-section {
+      margin: 40px auto;
+      max-width: 700px;
+      border-radius: 12px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .toggle-title {
+      background-color: #00695c;
+      color: white;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .toggle-title:hover {
+      background-color: #004d40;
+    }
+
+    .toggle-content {
+      display: none;
+      padding: 20px;
+      background-color: #f9f9f9;
+      animation: fadeSlideUp 0.6s ease;
+    }
+
     .footer {
       background-color: #004d40;
       color: white;
@@ -106,6 +135,12 @@
       font-weight: bold;
     }
   </style>
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
 
@@ -118,9 +153,9 @@
 
   <div class="nav">
     <a href="#">Home</a>
-    <a href="#">Our Service</a>
-    <a href="#">Why Choose Me</a>
-    <a href="#">Contact Me</a>
+    <a href="#service">Our Service</a>
+    <a href="#choose">Why Choose Me</a>
+    <a href="#contact">Contact Me</a>
   </div>
 
   <section class="hero" id="home">
@@ -129,6 +164,27 @@
       <p>I help you craft professional documents that speak for you.</p>
     </div>
   </section>
+
+  <div class="toggle-section" id="service">
+    <div class="toggle-title" onclick="toggleContent('content1')">📄 Our Service</div>
+    <div class="toggle-content" id="content1">
+      <p>We provide typing, CV/resume creation, document formatting, translation (Nepali/English), and more tailored freelancing services.</p>
+    </div>
+  </div>
+
+  <div class="toggle-section" id="choose">
+    <div class="toggle-title" onclick="toggleContent('content2')">🌟 Why Choose Me</div>
+    <div class="toggle-content" id="content2">
+      <p>I offer affordable, accurate, and fast services with 100% customer satisfaction. Your documents are crafted with professional quality.</p>
+    </div>
+  </div>
+
+  <div class="toggle-section" id="contact">
+    <div class="toggle-title" onclick="toggleContent('content3')">📬 Contact Me</div>
+    <div class="toggle-content" id="content3">
+      <p>You can contact me through email 📧 shivrajcvtypingservice@gmail.com or 💬 WhatsApp directly via <a href="https://wa.me/9779765808346">Click Here</a>.</p>
+    </div>
+  </div>
 
   <footer class="footer">
     <div>Connect with me:</div>
