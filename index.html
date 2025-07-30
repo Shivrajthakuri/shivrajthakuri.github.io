@@ -21,21 +21,33 @@
       background-color: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: center;
       padding: 10px 30px;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    nav .contact-links a {
+    .nav-links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #007bff;
+    }
+
+    .contact-links a {
       margin-left: 20px;
       text-decoration: none;
       color: #333;
       font-weight: bold;
     }
 
-    nav .contact-links a:hover {
+    .contact-links a:hover {
       color: #007bff;
     }
 
@@ -103,6 +115,11 @@
 <body>
 
   <nav>
+    <div class="nav-links">
+      <a href="#">🏠 Home</a>
+      <a href="#">🛠️ Our Services</a>
+      <a href="#">❓ Why Choose Me</a>
+    </div>
     <div class="contact-links">
       <a href="https://wa.me/9779765808346">📱 WhatsApp</a>
       <a href="https://www.fiverr.com/s/Kej5RGk">🎯 Fiverr</a>
