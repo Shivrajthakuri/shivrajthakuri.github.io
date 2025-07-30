@@ -3,12 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Freelancing Website</title>
+  <title>Shivraj CV & Typing Services</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    }
+
+    header {
+      background-color: #00695c;
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    header .contact-info {
+      font-size: 0.9em;
+    }
+
+    .nav {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 1em;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #00695c;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: #004d40;
     }
 
     .hero {
@@ -50,9 +87,41 @@
         opacity: 1;
       }
     }
+
+    .footer {
+      background-color: #004d40;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
+
+  <header>
+    <div class="logo">Shivraj CV & Typing Services</div>
+    <div class="contact-info">
+      📧 shivrajcvtypingservice@gmail.com &nbsp; | &nbsp; 💬 <a href="https://wa.me/9779765808346" style="color: white; text-decoration: underline;">WhatsApp</a>
+    </div>
+  </header>
+
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#">Our Service</a>
+    <a href="#">Why Choose Me</a>
+    <a href="#">Contact Me</a>
+  </div>
 
   <section class="hero" id="home">
     <div class="animated-box">
@@ -60,6 +129,15 @@
       <p>I help you craft professional documents that speak for you.</p>
     </div>
   </section>
+
+  <footer class="footer">
+    <div>Connect with me:</div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=61554582932573">📘 Facebook</a>
+      <a href="https://www.fiverr.com/s/Kej5RGk">💼 Fiverr</a>
+      <a href="https://github.com/shivrajthakuri">🐙 GitHub</a>
+    </div>
+  </footer>
 
 </body>
 </html>
