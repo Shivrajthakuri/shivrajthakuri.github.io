@@ -39,43 +39,36 @@
       text-shadow: 0 0 8px #a7ffeb;
     }
     .hero {
-      background-color: rgba(255, 255, 255, 0.9);
-      text-align: center;
-      padding: 80px 20px 50px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      max-width: 700px;
       margin: 40px auto 20px;
-      border-radius: 15px;
-      width: 80%;
-      box-shadow: 0 0 25px rgba(0, 150, 136, 0.5);
-      color: #004d40;
-      font-weight: 600;
-      font-size: 40px;
-      letter-spacing: 1px;
-      animation: fadeIn 2s ease forwards;
+      padding: 50px 20px 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      color: #00695c;
+      font-weight: 700;
+      letter-spacing: 1.5px;
       position: relative;
+    }
+    #animatedHeadline {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #26a69a, #004d40);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      min-height: 48px;
+      white-space: nowrap;
       overflow: hidden;
     }
-    .hero h1#animatedHeadline {
-      font-size: 40px;
-      font-weight: 700;
-      color: #004d40;
-      letter-spacing: 1px;
-      display: inline-block;
-      white-space: nowrap;
-      margin: 0;
-    }
-    .colorful {
-      display: inline-block;
-      animation: colorPulse 2s infinite;
-      font-size: 40px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    .hero p.subtext {
+    .subtext {
       font-size: 20px;
       font-weight: 400;
-      margin-top: 12px;
-      color: #00796b;
-      letter-spacing: 0.5px;
+      margin-top: 15px;
+      color: #004d40;
+      font-style: italic;
     }
     .toggle-buttons {
       width: 80%;
@@ -160,16 +153,6 @@
       0% {opacity: 0; transform: translateY(20px);}
       100% {opacity: 1; transform: translateY(0);}
     }
-    @keyframes colorPulse {
-      0%, 100% {
-        color: #004d40;
-        text-shadow: 0 0 5px #26a69a;
-      }
-      50% {
-        color: #26a69a;
-        text-shadow: 0 0 15px #4db6ac;
-      }
-    }
   </style>
 </head>
 <body>
@@ -182,8 +165,10 @@
 </header>
 
 <section class="hero" id="home">
-  <h1 id="animatedHeadline"></h1>
-  <p class="subtext">I help you craft professional documents that speak for you.</p>
+  <div class="animated-box">
+    <h1 id="animatedHeadline"></h1>
+    <p class="subtext">I help you craft professional documents that speak for you.</p>
+  </div>
 </section>
 
 <div class="toggle-buttons">
@@ -222,7 +207,6 @@
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(section => {
       if(section.id === sectionId){
-        // Toggle visibility with fade-slide animation
         if(section.style.display === 'block'){
           section.style.display = 'none';
         } else {
@@ -235,29 +219,30 @@
     });
   }
 
-  const headlineText = "Welcome to My Freelancing Services";
-  const headlineElement = document.getElementById('animatedHeadline');
+  const headline = "Welcome to My Freelancing Services";
   let index = 0;
+  const container = document.getElementById("animatedHeadline");
+  container.textContent = "";
 
-  function typeEffect() {
-    if(index < headlineText.length) {
-      const span = document.createElement('span');
-      span.textContent = headlineText.charAt(index);
-      span.classList.add('colorful');
-      headlineElement.appendChild(span);
-
+  function type() {
+    if (index < headline.length) {
+      let char = headline[index];
+      if(char === " ") {
+        container.textContent += " ";
+      } else {
+        container.textContent += char;
+      }
       index++;
-      setTimeout(typeEffect, 120);
+      setTimeout(type, 150);
     } else {
       setTimeout(() => {
-        headlineElement.innerHTML = '';
+        container.textContent = "";
         index = 0;
-        typeEffect();
-      }, 3000);
+        type();
+      }, 2000);
     }
   }
-
-  window.onload = typeEffect;
+  type();
 </script>
 
 </body>
