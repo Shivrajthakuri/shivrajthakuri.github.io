@@ -41,9 +41,9 @@
     .hero {
       background-color: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
-      max-width:  900px;  /* 700px बाट बढाएको */
+      max-width:  900px;
       margin: 40px auto 20px;
-      padding: 60px 20px 40px;  /* padding थोरै बढाएको */
+      padding: 60px 20px 40px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
       text-align: center;
       color: #00695c;
@@ -52,7 +52,7 @@
       position: relative;
     }
     #animatedHeadline {
-      font-size:  48px;  /* 38px बाट बढाएको */
+      font-size:  48px;
       font-weight: 800;
       letter-spacing: 2px;
       background: linear-gradient(90deg, #26a69a, #004d40);
@@ -65,10 +65,9 @@
     }
     .subtext {
       font-size: 20px;
-      font-weight: 400;
+      font-weight: 700;
       margin-top: 15px;
       color: #004d40;
-      font-style: Bold;
     }
     .toggle-buttons {
       width: 80%;
@@ -227,11 +226,7 @@
   function type() {
     if (index < headline.length) {
       let char = headline[index];
-      if(char === " ") {
-        container.textContent += " ";
-      } else {
-        container.textContent += char;
-      }
+      container.textContent += char;
       index++;
       setTimeout(type, 150);
     } else {
