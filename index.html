@@ -2,38 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shivraj CV & Typing Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shivraj CV & Typing Service</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #ffffff);
-       url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      font-family: 'Poppins', Arial, sans-serif;
+      background: 
+        linear-gradient(rgba(0, 77, 64, 0.6), rgba(0, 77, 64, 0.6)),
+        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #e0f2f1;
     }
-
     header {
       background-color: rgba(0, 77, 64, 0.85);
-      padding: 20px 40px;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 15px 20px;
+      text-align: right;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      font-weight: 600;
+      font-size: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 1s ease forwards;
     }
-
-    header .logo {
-      font-size: 1.1em;
-      font-weight: bold;
+    header a {
+      color: #a7ffeb;
+      margin-left: 18px;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
-
-    header .contact-info {
-      font-size: 0.9em;
+    header a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px #a7ffeb;
     }
-
     .hero {
-       background-color: rgba(255, 255, 255, 0.15);
+      background-color: rgba(255, 255, 255, 0.15);
       text-align: center;
       padding: 80px 20px 50px;
       margin: 40px auto 20px;
@@ -45,41 +51,20 @@
       font-size: 40px;
       letter-spacing: 1.5px;
       animation: fadeIn 2s ease forwards;
-     
     }
-
-    .animated-box {
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-      padding: 50px;
-      max-width: 700px;
-      text-align: center;
-      animation: fadeSlideUp 1.5s ease forwards;
-      transform: translateY(40px);
-      opacity: 0;
-    }
-
-    .animated-box h1 {
-      font-size: 42px;
-      font-weight: bold;
-      color: #00695c;
-      margin-bottom: 20px;
-    }
-
-    .animated-box p {
+    .hero p.subtext {
       font-size: 20px;
-      color: #004d40;
-      font-style: italic;
+      font-weight: 400;
+      margin-top: 12px;
+      color: #80cbc4;
+      letter-spacing: 0.5px;
     }
-
-    @keyframes fadeSlideUp {
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    .toggle-buttons {
+      width: 80%;
+      margin: 30px auto 50px;
+      text-align: center;
     }
-.toggle-buttons button {
+    .toggle-buttons button {
       background: linear-gradient(45deg, #00796b, #004d40);
       color: #e0f2f1;
       border: none;
@@ -92,29 +77,12 @@
       box-shadow: 0 5px 15px rgba(0, 77, 64, 0.5);
       transition: background 0.4s ease, transform 0.3s ease;
     }
- 
+    .toggle-buttons button:hover {
+      background: linear-gradient(45deg, #26a69a, #004d40);
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(38, 166, 154, 0.7);
     }
-
-    .toggle-title {
-      background-color: #00695c;
-      color: white;
-      padding: 15px 20px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .toggle-title:hover {
-      background-color: #004d40;
-    }
-
-    .toggle-content {
-      display: none;
-      padding: 20px;
-      background-color: #f9f9f9;
-      animation: fadeSlideUp 0.6s ease;
-    }
- .content-section {
+    .content-section {
       width: 80%;
       margin: 0 auto 50px;
       background-color: rgba(0, 77, 64, 0.85);
@@ -126,13 +94,24 @@
       color: #b2dfdb;
       display: none;
       animation: fadeSlideIn 0.7s ease forwards;
-     }
-    
+    }
+    .content-section h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      text-shadow: 0 0 10px #26a69a;
+    }
+    .content-section ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    .content-section ul li {
+      margin-bottom: 10px;
+    }
     .footer-button {
       text-align: center;
       margin-bottom: 50px;
-      }
-    
+    }
     .footer-button a {
       background: linear-gradient(45deg, #00796b, #004d40);
       color: #e0f2f1;
@@ -143,9 +122,8 @@
       border-radius: 50px;
       box-shadow: 0 7px 20px rgba(0, 77, 64, 0.7);
       transition: background 0.4s ease, transform 0.3s ease;
-      }
-
-      .footer-button a:hover {
+    }
+    .footer-button a:hover {
       background: linear-gradient(45deg, #26a69a, #004d40);
       transform: scale(1.1);
       box-shadow: 0 10px 35px rgba(38, 166, 154, 0.8);
